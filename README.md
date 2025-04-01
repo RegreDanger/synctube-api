@@ -27,20 +27,5 @@ An API to synchronize Dropbox storage music with a YouTube playlist and return t
 	Now, write in your .env file: `DROPBOX_API_KEY=API_KEY` (replace API_KEY for you API KEY)
 
 ## Running
-- For local
-	Execute: `python index.py`
-	The API will run at: http://127.0.0.1:5000
-
-- Running/Deploying on Vercel
-    - Before you start, make sure you have the following:
-	 - [Node.js](https://nodejs.org) installed
-	 - Vercel CLI installed. You can install it by running the following command in your terminal:
-	 `npm i -global vercel`
-
-	 - if you haven't logged in to Vercel yet, run the following command to log in:
-	 `vercel login`
-	 Follow the prompts to log in with your Vercel account.
-		 
-	 - Once you logged in, run:
-	 `vercel .`
-	 And follow the prompts to set up the API in your server.
+Execute: `python index.py`
+The API will run at: http://127.0.0.1:5000
