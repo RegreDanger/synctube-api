@@ -20,6 +20,11 @@ An API to synchornize Dropbox storage music with a YouTube playlist and return t
 	
 	- Install the dependencies
 	`pip install -r requirements.txt`
+	
+	- Set the .env file
+	First, create a .env file
+	Go to [Dropbox Devs](https://www.dropbox.com/developers) and create a web app to get your OAuth API KEY
+	Now, write in your .env file: `DROPBOX_API_KEY=API_KEY` (replace API_KEY for you API KEY)
 
 ## Running
 - For local
@@ -32,11 +37,10 @@ An API to synchornize Dropbox storage music with a YouTube playlist and return t
 	 - Vercel CLI installed. You can install it by running the following command in your terminal:
 	 `npm i -global vercel`
 
-	- Login to Vercel
 	 - if you haven't logged in to Vercel yet, run the following command to log in:
-		 `vercel login`
-		 Follow the prompts to log in with your Vercel account.
+	 `vercel login`
+	 Follow the prompts to log in with your Vercel account.
 		 
-	- Once you logged in, run:
+	 - Once you logged in, run:
 	 `vercel .`
 	 And follow the prompts to set up the API in your server.
