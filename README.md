@@ -1,5 +1,5 @@
 # SyncTube API 🎵
-An API to synchornize Dropbox storage music with a YouTube playlist and return the artist, title, and link for frontend playback.
+An API to synchronize Dropbox storage music with a YouTube playlist and return the artist, title, and link for frontend playback.
 
 ## Features 🔥
 - Integrated with Dropbox for cloud sotrage
