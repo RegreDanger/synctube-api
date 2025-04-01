@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba API</title>
+    <script>
+        async function syncPlaylist() {
+            const playlistUrl = document.getElementById("playlist_url").value;
+            
+            try {
+                const response = await fetch('http://127.0.0.1:5000/sync', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ playlist_url: playlistUrl })
+                });
+
+                const data = await response.json();
+                console.log(data);
+
+                if (response.ok) {
+                    document.getElementById("response").innerHTML = JSON.stringify(data, null, 2);
+                } else {
+                    document.getElementById("response").innerHTML = "Error: " + JSON.stringify(data, null, 2);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("response").innerHTML = "Error: " + error.message;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Sincronización de Playlist</h1>
+    
+    <label for="playlist_url">URL de la Playlist:</label>
+    <input type="text" id="playlist_url" placeholder="Introduce la URL de la playlist">
+    
+    <button onclick="syncPlaylist()">Sincronizar</button>
+
+    <pre id="response"></pre>
+
+</body>
+</html>
