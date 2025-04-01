@@ -3,3 +3,4 @@ dropbox
 flask
 flask_cors
 python-dotenv
+gunicorn
