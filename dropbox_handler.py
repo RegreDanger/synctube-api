@@ -39,9 +39,12 @@ class DropboxHandler:
                 else:
                     shared_link = self.dbx.sharing_create_shared_link_with_settings(entry.path_lower).url
 
-                print(shared_link)                
+                print("Original: " + shared_link)                
 
                 shared_link = shared_link[:-5] + "&dl=1&raw=1"
+                shared_link = shared_link.replace("www.dropbox.com", "dl.dropbox.com")
+
+                print("Modified: " + shared_link)
                 
                 data = self.download_file_from_dropbox(entry.name.replace(".mp3", ""))
                 data_result[shared_link] = data 
