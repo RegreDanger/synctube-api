@@ -3,8 +3,8 @@ import dropbox
 import json
 
 class DropboxHandler:
-    def __init__(self, api_key, dropbox_path):
-        self.dbx = dropbox.Dropbox(api_key)
+    def __init__(self, api_key, app_key, app_secret_key, dropbox_path):
+        self.dbx = dropbox.Dropbox(api_key, app_key, app_secret_key)
         self.dropbox_path = dropbox_path
 
     def get_files_in_folder(self):
@@ -38,8 +38,10 @@ class DropboxHandler:
                     shared_link = links[0].url
                 else:
                     shared_link = self.dbx.sharing_create_shared_link_with_settings(entry.path_lower).url
-                
-                shared_link = shared_link[:-5] + "?raw=1"
+
+                print(shared_link)                
+
+                shared_link = shared_link[:-5] + "&dl=1&raw=1"
                 
                 data = self.download_file_from_dropbox(entry.name.replace(".mp3", ""))
                 data_result[shared_link] = data 

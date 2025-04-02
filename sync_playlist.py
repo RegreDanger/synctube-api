@@ -1,9 +1,9 @@
-from config import DROPBOX_API_KEY, DROPBOX_PATH, USE_MOCK_DATA
+from config import DROPBOX_API_KEY, APP_KEY, APP_SECRET_KEY, DROPBOX_PATH
 from dropbox_handler import DropboxHandler
 from youtube_handler import YoutubeHandler
 from song_processor import SongProcessor
 
-dropbox_handler = DropboxHandler(DROPBOX_API_KEY, DROPBOX_PATH)
+dropbox_handler = DropboxHandler(DROPBOX_API_KEY, APP_KEY, APP_SECRET_KEY, DROPBOX_PATH)
 
 def sync_playlist(playlist_url):
     youtube_handler = YoutubeHandler(playlist_url)

@@ -23,8 +23,9 @@ An API to synchronize Dropbox storage music with a YouTube playlist and return t
 	
 	- Set the .env file
 	First, create a .env file
-	Go to [Dropbox Devs](https://www.dropbox.com/developers) and create a web app to get your OAuth API KEY
-	Now, write in your .env file: `DROPBOX_API_KEY=API_KEY` (replace API_KEY for you API KEY)
+	Go to [Dropbox Devs](https://www.dropbox.com/developers) and create a web app to get your OAuth API KEY, APP KEY and SECRET KEY
+	Now, write in your .env file: `DROPBOX_API_KEY=API_KEY APP_KEY=API_KEY APP_SECRET_KEY` (replace API_KEY's for your API KEY's)
+                 And finally, add your path folder for storage: `DROPBOX_PATH=PATH` (replace PATH for your path).
 
 ## Running
 Execute: `python index.py`
